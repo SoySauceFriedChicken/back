@@ -7,6 +7,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 java {
 	sourceCompatibility = '17'
@@ -20,6 +21,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 tasks.named('test') {
@@ -32,3 +34,6 @@ generateJava {
 	generateClient = true
 }
 
+test {
+	useJUnitPlatform()
+}
